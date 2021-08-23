@@ -40,7 +40,7 @@ mod problems {
             -2147483647,
             2147483647,
         ];
-        // Algo is O(n^2) and at least one input is large.
+        // Algo is O(n^2) and at least one input is large, which this test doesn't cover.
 
         assert_eq!(Solution::reverse_pairs(example_1), 2);
         assert_eq!(Solution::reverse_pairs(example_2), 3);

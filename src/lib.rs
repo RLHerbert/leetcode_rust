@@ -1,5 +1,3 @@
-// mod easy;
-mod hard;
 mod solutions {
     pub mod easy;
     pub mod hard;
