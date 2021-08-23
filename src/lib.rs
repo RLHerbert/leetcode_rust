@@ -4,7 +4,7 @@ mod solutions {
     pub mod medium;
 
     #[allow(dead_code)]
-    pub struct Solution;
+    pub struct Solution; // Just so I can easily copy/paste from/to LeetCode.
 }
 
 #[cfg(test)]
