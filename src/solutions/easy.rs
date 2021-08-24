@@ -47,6 +47,7 @@ impl Solution {
 impl Solution {
     #[allow(dead_code)]
     pub fn merge_two_lists(l1: Option<Node>, l2: Option<Node>) -> Option<Node> {
+        // This is cursed.
         match (l1, l2) {
             (None, None) => None,
             (None, Some(node)) => Some(Node::new(ListNode {

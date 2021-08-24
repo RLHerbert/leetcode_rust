@@ -7,6 +7,7 @@ These are my own solutions to select [LeetCode problems](https://leetcode.com/pr
 | Problem | Status |
 | ------- | ------ |
 | 1       | ✔      |
+| 11      | ✔      |
 | 420     | ❌      |
 | 493     | ❌      |
 | 1920    | ✔      |
