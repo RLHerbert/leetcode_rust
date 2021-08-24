@@ -43,6 +43,50 @@ impl Solution {
     }
 }
 
+// 21. Merge Two Sorted Lists
+impl Solution {
+    #[allow(dead_code)]
+    pub fn merge_two_lists(l1: Option<Node>, l2: Option<Node>) -> Option<Node> {
+        match (l1, l2) {
+            (None, None) => None,
+            (None, Some(node)) => Some(Node::new(ListNode {
+                val: node.val,
+                next: Solution::merge_two_lists(None, node.next),
+            })),
+            (Some(node), None) => Some(Node::new(ListNode {
+                val: node.val,
+                next: Solution::merge_two_lists(node.next, None),
+            })),
+            (Some(node1), Some(node2)) => Some(Node::new(match node1.val < node2.val {
+                true => ListNode {
+                    val: node1.val,
+                    next: Solution::merge_two_lists(node1.next, Some(node2)),
+                },
+                false => ListNode {
+                    val: node2.val,
+                    next: Solution::merge_two_lists(Some(node1), node2.next),
+                },
+            })),
+        }
+    }
+}
+
+type Node = Box<ListNode>;
+// type MaybeNode = Option<Node>;
+
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode { next: None, val }
+    }
+}
+
 // 1920. Build Array from Permutation
 impl Solution {
     #[allow(dead_code)]
